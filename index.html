@@ -55,7 +55,8 @@ var RADS_MAP_CONFIG = {
   timeSlider: null,
   legend: [],                           // filled from the data below, before init
   note: '500 m circles, cut midway where they met a neighbour, split NE / SE / SW / NW. ' +
-        'Shading = buildings per quadrant. Click a dot or quadrant for its card.'
+        'Shading = buildings per quadrant. Click a dot or quadrant for its card. ' +
+        'Buildings: Google Open Buildings v3. Boundaries: OCHA.'
 };
 </script>
 <script>
@@ -110,7 +111,7 @@ function popQuadRows(name,qi,b){
 
 var map = L.map('map', RadsMap.motionOptions()).setView([24.9,67.1],11);
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{
-  maxZoom:19, attribution:'Esri, Maxar &middot; Buildings: Google Open Buildings v3 &middot; Boundaries: OCHA'}).addTo(map);
+  maxZoom:19, attribution:'Esri, Maxar'}).addTo(map);
 var refLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,opacity:.65});
 function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
